@@ -40,7 +40,7 @@ const PageBody = (props) => {
             for (let i = 0; i < props.items.length; i++){
               let cell = []
                 cell.push(<td className="trStyle"> {props.items[i].mission_name} </td>)
-                cell.push(<td className="trStyle"> {props.items[i].launch_date_utc} </td>)
+                cell.push(<td className="trStyle"> {new Date(props.items[i].launch_date_utc).getMonth() + 1} {new Date(props.items[i].launch_date_utc).getFullYear()}</td>)
                 cell.push(<td className="trStyle"> {props.items[i].launch_site.site_name} </td>)
                 rows.push(<tr >{cell}</tr>)
             }
